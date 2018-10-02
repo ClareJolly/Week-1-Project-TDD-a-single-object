@@ -1,9 +1,18 @@
-def dice_roll(num_dice = 1)
-  results = []
+@results = []
+
+def roll(num_dice = 1)
   num_dice.times {
-    results << randomize
+    dice_roll
   }
-  return results.reduce(:+)
+  results_total(@results)
+end
+
+def dice_roll
+    @results << randomize
+end
+
+def results_total(scores)
+  return scores.reduce(:+)
 end
 
 def randomize
@@ -11,4 +20,9 @@ def randomize
   return dice.sample
 end
 
-# puts dice_roll(2)
+def print_output(arr = @results)
+  puts arr
+  return "Dice results #{arr}"
+end
+
+ puts print_output([1,2])

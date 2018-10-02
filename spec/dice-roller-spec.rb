@@ -14,16 +14,16 @@ describe "randomize" do
   end
 end
 
-describe "dice_roll" do
-  it "return result from 2 to 12 for 2 dice" do
+describe "total sum" do
+  it "return sum of scores (3) when 1 and 2 rolled" do
     #expect(dice_roll).to eq(1).or eq(2).or eq(3).or eq(4).or eq(5).or eq(6)
-    expect(dice_roll(2)).to be_between(2, 12).inclusive
+    expect(results_total([1, 2])).to eq(3)
   end
 end
 
-describe "dice_roll" do
-  it "return result from 4 to 24 for 4 dice" do
+describe "output rolls" do
+  it "return score output for 1 and 2 scores" do
     #expect(dice_roll).to eq(1).or eq(2).or eq(3).or eq(4).or eq(5).or eq(6)
-    expect(dice_roll(4)).to be_between(4, 24).inclusive
+    expect(print_output([1,2])).to eq ("Dice results [1, 2]")
   end
 end
